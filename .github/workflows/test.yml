@@ -28,8 +28,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.organization=rnhuni
-            -Dsonar.projectKey=rnhuni_TutorialCancionesTags
+            -Dsonar.organization=langelb-1
+            -Dsonar.projectKey=langelb_TutorialCancionesTags
             -Dsonar.projectBaseDir=.
             -Dsonar.sources=.
             -Dsonar.python.coverage.reportPaths=coverage.xml
