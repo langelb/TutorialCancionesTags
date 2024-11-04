@@ -163,6 +163,14 @@ class Coleccion():
                 Cancion.interpretes.any(Interprete.nombre.ilike('%{0}%'.format(interprete_nombre)))).all()
         return canciones
     
+    def buscar_canciones_por_interpretes(self, interprete_nombre):
+        if interprete_nombre == "":
+            canciones = session.query(Cancion).all()
+        else:
+            canciones = session.query(Cancion).filter(
+                Cancion.interpretes.any(Interprete.nombre.ilike('%{0}%'.format(interprete_nombre)))).all()
+        return canciones
+    
     def asociar_cancion(self, cancion_id, album_id):
         cancion = session.query(Cancion).filter(Cancion.id == cancion_id).first()
         album = session.query(Album).filter(Album.id == album_id).first()
